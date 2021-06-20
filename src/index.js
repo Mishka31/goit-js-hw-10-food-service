@@ -9,7 +9,7 @@ const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
-
+bodyEl.classList.add(Theme.LIGHTnpm);
 menuContainer.insertAdjacentHTML('beforeend', createCardMarkup(menuBase));
 
 function createCardMarkup(menuBase) {
