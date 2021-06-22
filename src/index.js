@@ -9,7 +9,10 @@ const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
-bodyEl.classList.add(Theme.LIGHT);
+// bodyEl.classList.add(Theme.LIGHT);
+// bodyEl.classList.add(
+//   localStorage.getItem('theme') === null ? Theme.LIGHT : localStorage.getItem('theme'),
+// );
 menuContainer.insertAdjacentHTML('beforeend', createCardMarkup(menuBase));
 
 function createCardMarkup(menuBase) {
@@ -18,7 +21,9 @@ function createCardMarkup(menuBase) {
 
 checkBoxEl.addEventListener('change', onCheckBoxClick);
 
-bodyEl.classList.add(localStorage.getItem('theme'));
+bodyEl.classList.add(
+  localStorage.getItem('theme') === null ? Theme.LIGHT : localStorage.getItem('theme'),
+);
 
 function onCheckBoxClick(e) {
   if (e.currentTarget.checked) {
